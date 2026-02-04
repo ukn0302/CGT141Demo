@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="css/master.css">
+  <link rel="stylesheet" href="css/mediaqueries.css">
+  <link rel="stylesheet" href="css/master-create.css">    <script src="js/phone-nav.js" defer></script>
+  <script src="js/phone-nav.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/createp.js" defer></script>
+  <title>MindBloom — Create</title>
+</head>
+<body>
+
+    <div id="page-container">
+        <nav id="nav-main">
+            <div class="logo"><a href="index.html" id="logo">MindBloom</a></div>
+            <button class="nav-toggle">☰</button>
+            <ul class="nav-links-2">
+                <li><a href="storage.html">Idea Storage</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="login.html"><img src="image/notification.svg" width="30px" height="30px" class="noti"></a></li>
+                <li><a href="signup.html" class="user-profile-image"></a></li>
+            </ul>
+        </nav>
+        <button class="menu-btn">></button>
+        <div class="nav-links-3">
+            <a href="create.html"><img src="image/plus.svg" width="30px" height="30px">Create</a>
+            <a href="storage.html"><img  src="image/list.svg" width="30px" height="30px">View</a>
+            <a href="visualize.html"><img  src="image/graph.svg" width="30px" height="30px">Visualize</a>
+            <a href="saved.html"><img src="image/saved.svg" width="30px" height="30px">Saved</a> 
+        </div>
+        <section id="create-page">
+            <!-- MAIN CONTENT -->
+  <main class="page">
+    <!-- Customizing panel -->
+    <section class="panel">
+      <h2>Customizing</h2>
+
+      <!-- Title -->
+      <div class="field">
+        <label for="title">Title (max 5 words)</label>
+        <div class="count" id="titleCount">0 / 5 words</div>
+        <input id="title" type="text" placeholder="Enter your idea title..." autocomplete="off">
+      </div>
+
+      <!-- Tags -->
+      <div class="field">
+        <label>Tags (choose colors)</label>
+        <div class="tag-row">
+          <input id="tagText" class="tag-input" type="text" placeholder="+ Add tag">
+          <div class="color-palette" id="colorPalette">
+            <button class="dot add" id="customColorBtn" title="Pick a color">+</button>
+          </div>
+          <button id="addTagBtn" class="btn subtle">Add</button>
+          <input type="color" id="customColorPicker" class="color-input-hidden" value="#F5CF5D" aria-label="custom color">
+        </div>
+        <div id="tagList" class="tag-list"></div>
+      </div>
+
+      <!-- Cover Image -->
+      <div class="field">
+        <label>Cover Image (optional)</label>
+        <div id="dropzone" class="dropzone" tabindex="0">
+          <div class="dz-inner">
+            <svg class="upload-icn" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="4" ry="4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M12 16V8M8.75 11.25 12 8l3.25 3.25" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p>Drop an image here or click to upload</p>
+            <small>PNG, JPG up to 10MB</small>
+          </div>
+          <img id="coverPreview" alt="" class="preview hidden"/>
+        </div>
+        <input id="coverInput" type="file" accept="image/png, image/jpeg" class="hidden">
+      </div>
+
+      <!-- Content -->
+      <div class="field">
+        <label for="content">Content (max 2 sentences)</label>
+        <div class="count" id="contentCount">0 / 2 sentences</div>
+        <textarea id="content" rows="4" placeholder="Write your content here..."></textarea>
+      </div>
+
+      <!-- Visibility -->
+      <div class="field">
+        <label>Visibility</label>
+        <p class="hint">Private: Appears only in View • Public: Appears in View and Forum</p>
+        <div class="visibility">
+          <button class="pill active" data-value="Private" id="visPrivate">Private</button>
+          <button class="pill" data-value="Public" id="visPublic">Public</button>
+        </div>
+      </div>
+    </section>
+
+    <!--Live Preview panel -->
+    <section class="panel">
+      <h2>Live Preview</h2>
+
+      <article class="card">
+        <h3 id="previewTitle">Untitled Note</h3>
+        <p id="previewBody" class="muted">No content provided</p>
+
+        <div class="card-footer">
+          <div class="avatar">JD</div>
+          <div class="meta">
+            <div class="name">John Doe</div>
+            <div class="date" id="previewDate"></div>
+          </div>
+          <span class="badge" id="previewVisibility">Private</span>
+        </div>
+
+        <button class="btn save" id="saveBtn">Save</button>
+      </article>
+        </section>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+/*  Main Layout */
+.page{
+    padding-top: calc(var(--topnav-h) + 24px);
+    padding-left: calc(var(--sidebar-w) + 32px);
+    padding-right: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  /* Panels */
+  .panel{
+    background: var(--panel);
+    border:1px solid var(--stroke);
+    border-radius: var(--radius);
+    padding:24px;
+    margin-bottom:24px;
+  }
+  .panel h2{ margin:0 0 16px 0; font-size:16px; }
+  .panel h3{ margin:0 0 16px 0; font-size:16px; }
+  .muted{ margin:0 0 16px 0; font-size:13px; }
+  
+  /*  Fields  */
+  .field{ position:relative; margin-bottom:20px; }
+  .field label{ display:block; font-weight:500; margin-bottom:8px; }
+  .count{
+    position:absolute; top:0; right:0; transform:translateY(20%);
+    color:var(--muted); font-size:13px;
+  }
+  .hint{ color:var(--muted); font-size:14px; margin:4px 0 10px; }
+  
+  input[type="text"], textarea{
+    width:100%; border:1px solid var(--stroke); border-radius:12px;
+    padding:14px 16px; font-size:16px; background:#fff; outline:none;
+  }
+  input[type="text"]:focus, textarea:focus{
+    border-color:#E9CC61; box-shadow:0 0 0 3px rgba(242,218,137,.25);
+  }
+  
+  /* Tags */
+  .tag-row{ display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+  .tag-input{ flex:1; }
+  
+  .color-palette{ display:flex; gap:10px; align-items:center; }
+  .dot{
+    width:34px; height:34px; border-radius:50%;
+    border:2px solid #00000018; background:#F5CF5D; cursor:pointer;
+  }
+  .dot.add{
+    display:flex; align-items:center; justify-content:center;
+    font-weight:400;
+    background:#fff;
+  }
+  
+  .hidden{ display:none !important; }
+  
+  /* add button */
+  .btn{
+    border:1px solid var(--stroke); background:#fff;
+    padding:10px 16px; border-radius:10px; font-weight:600; cursor:pointer;
+  }
+  .btn.subtle:hover{ background:#FFF7DC; }
+  
+  /* rendered tags */
+  .tag-list{ margin-top:10px; display:flex; gap:8px; flex-wrap:wrap; }
+  .tag{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:8px 10px; border-radius:999px; font-size:14px;
+    border:1px solid var(--stroke); background:#fff;
+  }
+  .tag .dot-mini{ width:10px; height:10px; border-radius:50%; border:1px solid #00000010; }
+  .tag .x{ cursor:pointer; opacity:.6; font-weight:700; }
+  .tag .x:hover{ opacity:1; }
+  
+  /*  Dropzone  */
+  .dropzone{
+    position:relative;
+    border:2px dashed #e0c792; background:#fffdf4;
+    height: 190px; border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    outline:none;
+  }
+  .dropzone:focus{ box-shadow:0 0 0 3px rgba(204, 176, 85, 0.402); }
+  .dz-inner{ text-align:center; }
+  .upload-icn{
+    width:32px; height:32px; display:block; margin:0 auto 8px;
+    color:#dabe4e;
+  }
+  .preview{
+    position:absolute; inset:0;
+    width:100%; height:100%; object-fit:cover; border-radius:14px;
+  }
+  
+  /*  Visibility pills */
+  .visibility{ display:flex; gap:12px; }
+  .pill{
+    border:1px solid var(--stroke); background:#fff;
+    padding:10px 16px; border-radius:12px; font-weight:600; cursor:pointer;
+  }
+  .pill.active{ background:#FFF7DC; border-color:#E9CC61; }
+  
+  /* Live preview card  */
+  .card{
+    background:#fff; border:1px solid var(--stroke);
+    border-radius:18px; padding:18px;
+  }
+  .card h3{ margin:0 0 6px; }
+  .card .muted{ color:var(--muted); margin:0 0 14px; }
+  .card-footer{
+    display:flex; align-items:center; gap:12px;
+    padding-top:12px; border-top:1px solid var(--stroke);
+  }
+  .avatar{
+    width:36px; height:36px; border-radius:50%;
+    display:grid; place-items:center; font-weight:700; color:#111; background:#F2DA89;
+  }
+  .meta .name{ font-weight:200; }
+  .meta .date{ color:var(--muted); font-size:14px; }
+  .badge{
+    margin-left:auto; padding:6px 10px; border-radius:999px;
+    background:#FFF7DC; border:1px solid #E9CC61; font-weight:400; font-size:10px;
+  }
+  .btn.save{
+    background:var(--brand); border-color:#E9CC61; width:100%; margin-top:16px;
+  }
+  .btn.save:hover{ filter:brightness(.98); }
+  
+  /* bottom breathing room */
+  .spacer{ height:60px; }
+  
+  /* invisible color input for custom color picker */
+  .color-input-hidden {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+  }
+  

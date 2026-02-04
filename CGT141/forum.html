@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/master.css"> 
+    <link rel="stylesheet" href="css/mediaqueries.css">
+    <script src="js/avatar.js"></script>
+    <script src="js/search.js" defer></script>
+    <script src="js/sort.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/phone-nav.js" defer></script>
+    <title>Saved</title>
+</head>
+<body>
+    <div id="page-container-1">
+        <nav id="nav-main">
+            <div class="logo"><a href="index.html" id="logo">MindBloom</a></div>
+            <button class="nav-toggle">☰</button>
+            <ul class="nav-links-2">
+                <li><a href="storage.html">Idea Storage</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="login.html"><img src="image/notification.svg" width="30px" height="30px" class="noti"></a></li>
+                <li><a href="signup.html" class="user-profile-image"></a></li>
+            </ul>
+        </nav>
+        <div id="forum-page">
+            <section id="forum-page-1">
+                <form action="/search" method="get">
+                    <input type="search" class="search-query" name="q" placeholder="Search...">
+                </form>
+                <div class="filter-container">
+                    <div class="sort">
+                        <h3>Sort</h3>
+                        <select name="myDropdown" class="myDropdown">
+                            <option value="a-z">A-Z</option>
+                            <option value="z-a">Z-A</option>
+                        </select>
+                        <button type="button" class="apply-button">Apply</button>
+                    </div>
+                    <div class="filter">
+                        <h2>Filter</h2>
+                        <form action="/action_page.php" class="filter-tags">
+                            <div class="filter-item">
+                                <input type="checkbox" id="filter1" name="filter1" value="event">
+                                <label for="filter1">Event</label><br>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="filter2" name="filter2" value="marketing">
+                                <label for="filter2">Marketing</label><br>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="filter3" name="filter3" value="halloween">
+                                <label for="filter3">Halloween</label><br>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="filter4" name="filter4" value="idea">
+                                <label for="filter4">Idea</label><br>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="filter5" name="filter5" value="daily">
+                                <label for="filter5">Daily</label><br>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="filter6" name="filter6" value="food">
+                                <label for="filter6">Food</label><br>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="filter7" name="filter7" value="training">
+                                <label for="filter7">Training</label><br><br>
+                            </div>
+                        </form> 
+                    </div>
+                </div>
+                <div class="note-container-1">
+                    <div class="notes" id="notes1">
+                        <div class="notes_content">
+                            <h4>A Bell Dog</h4>
+                            <h5>A Dog wearing a lots of Bells for Christmas</h5>
+                        </div>
+                        <div class="tags">
+                            <button class="event_tags">event</button>
+                            <button class="marketing_tags">marketing</button>
+                        </div>
+                        <hr class="hr_note">
+                        <div class="notes_user">
+                            <div class="user-profile-image"></div>
+                            <div class="account_info">
+                                <div class="user_name">
+                                    <h6>Cyline</h6>
+                                </div>
+                                <div class="user_timepost">
+                                    <h6>2h ago</h6>
+                                </div>
+                            </div>
+                            <div class="like_button">
+                                <svg xmlns="http://www.w3.org/2000/svg" 
+                                     class="bi-heart" viewBox="0 0 16 16">
+                                  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 
+                                           1.4 3.053c-.523 1.023-.641 2.5.314 3.905C2.91 
+                                           8.905 6.058 11.73 8 13.375c1.943-1.645 
+                                           5.09-4.47 6.286-6.417.955-1.405.838-2.882.314-3.905C13.486.878 
+                                           10.4.28 8.717 2.01z"/>
+                                </svg>
+                            </div>                          
+                        </div>
+                    </div>
+                    <div class="notes" id="notes2">
+                        <div class="notes_content">
+                            <h4>A Ghost Christmas Tree</h4>
+                            <h5>Christmas Tree wearing ghost costome</h5>
+                        </div>
+                        <div class="tags">
+                            <button class="halloween_tags">halloween</button>
+                            <button class="marketing_tags">marketing</button>
+                        </div>
+                        <hr class="hr_note">
+                        <div class="notes_user">
+                            <div class="user-profile-image"></div>
+                            <div class="account_info">
+                                <div class="user_name">
+                                    <h6>Amielle</h6>
+                                </div>
+                                <div class="user_timepost">
+                                    <h6>6h ago</h6>
+                                </div>
+                            </div>
+                            <div class="like_button">
+                                <svg xmlns="http://www.w3.org/2000/svg" 
+                                     class="bi-heart" viewBox="0 0 16 16">
+                                  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 
+                                           1.4 3.053c-.523 1.023-.641 2.5.314 3.905C2.91 
+                                           8.905 6.058 11.73 8 13.375c1.943-1.645 
+                                           5.09-4.47 6.286-6.417.955-1.405.838-2.882.314-3.905C13.486.878 
+                                           10.4.28 8.717 2.01z"/>
+                                </svg>
+                            </div>                          
+                        </div>
+                    </div>
+                    <div class="notes"id="notes3">
+                        <div class="notes_content">
+                            <h4>Chat Watermelon</h4>
+                            <h5>Comment favorite watermelon</h5>
+                        </div>
+                        <div class="tags">
+                            <button class="idea_tags">idea</button>
+                            <button class="daily_tags">daily</button>
+                        </div>
+                        <hr class="hr_note">
+                        <div class="notes_user">
+                            <div class="user-profile-image"></div>
+                            <div class="account_info">
+                                <div class="user_name">
+                                    <h6>Pomelo</h6>
+                                </div>
+                                <div class="user_timepost">
+                                    <h6>9h ago</h6>
+                                </div>
+                            </div>
+                            <div class="like_button">
+                                <svg xmlns="http://www.w3.org/2000/svg" 
+                                     class="bi-heart" viewBox="0 0 16 16">
+                                  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 
+                                           1.4 3.053c-.523 1.023-.641 2.5.314 3.905C2.91 
+                                           8.905 6.058 11.73 8 13.375c1.943-1.645 
+                                           5.09-4.47 6.286-6.417.955-1.405.838-2.882.314-3.905C13.486.878 
+                                           10.4.28 8.717 2.01z"/>
+                                </svg>
+                            </div>                          
+                        </div>
+                    </div>
+                    <div class="notes" id="notes4">
+                        <div class="notes_content">
+                            <h4>Prickly Snail</h4>
+                            <h5>Snail cook with pickle</h5>
+                        </div>
+                        <div class="tags">
+                            <button class="food_tags">food</button>
+                            <button class="training_tags">training</button>
+                        </div>
+                        <hr class="hr_note">
+                        <div class="notes_user">
+                            <div class="user-profile-image"></div>
+                            <div class="account_info">
+                                <div class="user_name">
+                                    <h6>Mydei</h6>
+                                </div>
+                                <div class="user_timepost">
+                                    <h6>12h ago</h6>
+                                </div>
+                            </div>
+                            <div class="like_button">
+                                <svg xmlns="http://www.w3.org/2000/svg" 
+                                     class="bi-heart" viewBox="0 0 16 16">
+                                  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 
+                                           1.4 3.053c-.523 1.023-.641 2.5.314 3.905C2.91 
+                                           8.905 6.058 11.73 8 13.375c1.943-1.645 
+                                           5.09-4.47 6.286-6.417.955-1.405.838-2.882.314-3.905C13.486.878 
+                                           10.4.28 8.717 2.01z"/>
+                                </svg>
+                            </div>                          
+                        </div>
+                    </div>
+                    <div class="notes" id="notes5">
+                        <div class="notes_content">
+                            <h4>A Bell Dog</h4>
+                            <h5>A Dog wearing a lots of Bells for Christmas</h5>
+                        </div>
+                        <div class="tags">
+                            <button class="event_tags">event</button>
+                            <button class="marketing_tags">marketing</button>
+                        </div>
+                        <hr class="hr_note">
+                        <div class="notes_user">
+                            <div class="user-profile-image"></div>
+                            <div class="account_info">
+                                <div class="user_name">
+                                    <h6>Cyline</h6>
+                                </div>
+                                <div class="user_timepost">
+                                    <h6>2h ago</h6>
+                                </div>
+                            </div>
+                            <div class="like_button">
+                                <svg xmlns="http://www.w3.org/2000/svg" 
+                                     class="bi-heart" viewBox="0 0 16 16">
+                                  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 
+                                           1.4 3.053c-.523 1.023-.641 2.5.314 3.905C2.91 
+                                           8.905 6.058 11.73 8 13.375c1.943-1.645 
+                                           5.09-4.47 6.286-6.417.955-1.405.838-2.882.314-3.905C13.486.878 
+                                           10.4.28 8.717 2.01z"/>
+                                </svg>
+                            </div>                          
+                        </div>
+                    </div>
+                    <div class="notes" id="notes6">
+                        <div class="notes_content">
+                            <h4>A Ghost Christmas Tree</h4>
+                            <h5>Christmas Tree wearing ghost costome</h5>
+                        </div>
+                        <div class="tags">
+                            <button class="halloween_tags">halloween</button>
+                            <button class="marketing_tags">marketing</button>
+                        </div>
+                        <hr class="hr_note">
+                        <div class="notes_user">
+                            <div class="user-profile-image"></div>
+                            <div class="account_info">
+                                <div class="user_name">
+                                    <h6>Amielle</h6>
+                                </div>
+                                <div class="user_timepost">
+                                    <h6>6h ago</h6>
+                                </div>
+                            </div>
+                            <div class="like_button">
+                                <svg xmlns="http://www.w3.org/2000/svg" 
+                                     class="bi-heart" viewBox="0 0 16 16">
+                                  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 
+                                           1.4 3.053c-.523 1.023-.641 2.5.314 3.905C2.91 
+                                           8.905 6.058 11.73 8 13.375c1.943-1.645 
+                                           5.09-4.47 6.286-6.417.955-1.405.838-2.882.314-3.905C13.486.878 
+                                           10.4.28 8.717 2.01z"/>
+                                </svg>
+                            </div>                          
+                        </div>
+                    </div>
+                    <div class="notes"id="notes7">
+                        <div class="notes_content">
+                            <h4>Chat Watermelon</h4>
+                            <h5>Comment favorite watermelon</h5>
+                        </div>
+                        <div class="tags">
+                            <button class="idea_tags">idea</button>
+                            <button class="daily_tags">daily</button>
+                        </div>
+                        <hr class="hr_note">
+                        <div class="notes_user">
+                            <div class="user-profile-image"></div>
+                            <div class="account_info">
+                                <div class="user_name">
+                                    <h6>Pomelo</h6>
+                                </div>
+                                <div class="user_timepost">
+                                    <h6>9h ago</h6>
+                                </div>
+                            </div>
+                            <div class="like_button">
+                                <svg xmlns="http://www.w3.org/2000/svg" 
+                                     class="bi-heart" viewBox="0 0 16 16">
+                                  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 
+                                           1.4 3.053c-.523 1.023-.641 2.5.314 3.905C2.91 
+                                           8.905 6.058 11.73 8 13.375c1.943-1.645 
+                                           5.09-4.47 6.286-6.417.955-1.405.838-2.882.314-3.905C13.486.878 
+                                           10.4.28 8.717 2.01z"/>
+                                </svg>
+                            </div>                          
+                        </div>
+                    </div>
+                    <div class="notes" id="notes8">
+                        <div class="notes_content">
+                            <h4>Prickly Snail</h4>
+                            <h5>Snail cook with pickle</h5>
+                        </div>
+                        <div class="tags">
+                            <button class="food_tags">food</button>
+                            <button class="training_tags">training</button>
+                        </div>
+                        <hr class="hr_note">
+                        <div class="notes_user">
+                            <div class="user-profile-image"></div>
+                            <div class="account_info">
+                                <div class="user_name">
+                                    <h6>Mydei</h6>
+                                </div>
+                                <div class="user_timepost">
+                                    <h6>12h ago</h6>
+                                </div>
+                            </div>
+                            <div class="like_button">
+                                <svg xmlns="http://www.w3.org/2000/svg" 
+                                     class="bi-heart" viewBox="0 0 16 16">
+                                  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 
+                                           1.4 3.053c-.523 1.023-.641 2.5.314 3.905C2.91 
+                                           8.905 6.058 11.73 8 13.375c1.943-1.645 
+                                           5.09-4.47 6.286-6.417.955-1.405.838-2.882.314-3.905C13.486.878 
+                                           10.4.28 8.717 2.01z"/>
+                                </svg>
+                            </div>                          
+                        </div>
+                    </div>
+                    <div class="notes" id="notes9">
+                        <div class="notes_content">
+                            <h4>A Bell Dog</h4>
+                            <h5>A Dog wearing a lots of Bells for Christmas</h5>
+                        </div>
+                        <div class="tags">
+                            <button class="event_tags">event</button>
+                            <button class="marketing_tags">marketing</button>
+                        </div>
+                        <hr class="hr_note">
+                        <div class="notes_user">
+                            <div class="user-profile-image"></div>
+                            <div class="account_info">
+                                <div class="user_name">
+                                    <h6>Cyline</h6>
+                                </div>
+                                <div class="user_timepost">
+                                    <h6>2h ago</h6>
+                                </div>
+                            </div>
+                            <div class="like_button">
+                                <svg xmlns="http://www.w3.org/2000/svg" 
+                                     class="bi-heart" viewBox="0 0 16 16">
+                                  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 
+                                           1.4 3.053c-.523 1.023-.641 2.5.314 3.905C2.91 
+                                           8.905 6.058 11.73 8 13.375c1.943-1.645 
+                                           5.09-4.47 6.286-6.417.955-1.405.838-2.882.314-3.905C13.486.878 
+                                           10.4.28 8.717 2.01z"/>
+                                </svg>
+                            </div>                          
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="css/master.css">
+  <link rel="stylesheet" href="css/mediaqueries.css">
+  <link rel="stylesheet" href="css/visualize.css">   
+  <script src="js/phone-nav.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/visualize.js" defer></script>
+  <title>MindBloom — Create</title>
+</head>
+<body>
+        <nav id="nav-main">
+            <div class="logo"><a href="index.html" id="logo">MindBloom</a></div>
+            <button class="nav-toggle">☰</button>
+            <ul class="nav-links-2">
+                <li><a href="storage.html">Idea Storage</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="login.html"><img src="image/notification.svg" width="30px" height="30px" class="noti"></a></li>
+                <li><a href="signup.html" class="user-profile-image"></a></li>
+            </ul>
+        </nav>
+        <button class="menu-btn">></button>
+        <div class="nav-links-3">
+            <a href="create.html"><img src="image/plus.svg" width="30px" height="30px">Create</a>
+            <a href="storage.html"><img  src="image/list.svg" width="30px" height="30px">View</a>
+            <a href="visualize.html"><img  src="image/graph.svg" width="30px" height="30px">Visualize</a>
+            <a href="saved.html"><img src="image/saved.svg" width="30px" height="30px">Saved</a> 
+        </div>
+        <section id="create-page">
+<!-- MAIN CONTENT -->
+<main class="page visualize-page">
+
+    <div class="visualize-layout">
+
+      <!-- LEFT COLUMN -->
+      <section class="visual-left">
+
+        <!-- Tag search -->
+        <div class="vis-tag-search">
+          <input type="text" id="tagSearchInput" placeholder="Find a tag...">
+        </div>
+
+        <!-- Tag pills -->
+        <section class="vis-tag-select panel">
+          <h2>Select tags to visualize:</h2>
+          <div class="vis-tag-row" id="visTagList">
+            <button class="pill-tag" data-tag="UX">#UX</button>
+            <button class="pill-tag" data-tag="Research">#Research</button>
+            <button class="pill-tag" data-tag="Wireframe">#Wireframe</button>
+            <button class="pill-tag" data-tag="Chem">#Chem</button>
+            <button class="pill-tag" data-tag="Lecture">#Lecture</button>
+            <button class="pill-tag" data-tag="Exam">#Exam</button>
+            <button class="pill-tag" data-tag="Notes">#Notes</button>
+            <button class="pill-tag" data-tag="Project">#Project</button>
+            <button class="pill-tag" data-tag="Risk">#Risk</button>
+            <button class="pill-tag" data-tag="Todo">#Todo</button>
+            <button class="pill-tag" data-tag="Design">#Design</button>
+            <button class="pill-tag" data-tag="Code">#Code</button>
+            <button class="pill-tag" data-tag="Personal">#Personal</button>
+          </div>
+        </section>
+
+        <!-- SKY / CONSTELLATION -->
+        <section class="vis-sky-panel panel">
+
+          <div class="vis-sky-container" id="skyContainer">
+            <!-- controls inside container -->
+            <div class="vis-sky-controls">
+              <button class="vis-sky-btn" id="zoomInBtn">＋</button>
+              <button class="vis-sky-btn" id="zoomOutBtn">－</button>
+              <button class="vis-sky-btn" id="fullscreenBtn">⤢</button>
+            </div>
+
+            <canvas id="skyLines"></canvas>
+
+            <div class="vis-sky-stars" id="skyStars">
+              <div class="vis-sky-hint" id="skyHint">
+                <div class="vis-hint-icon">✨</div>
+                <p>Select tags above to create your constellation</p>
+                <p class="vis-hint-sub">
+                  Click tags to select • Multiple selection available • Drag stars to move
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FILTERS -->
+        <section class="panel vis-filters">
+          <div class="vis-filter-row">
+            <div class="vis-filter-group" data-filter="visibility">
+              <span class="vis-filter-label">Visibility:</span>
+              <button class="pill active" data-value="public">Public</button>
+              <button class="pill" data-value="private">Private</button>
+            </div>
+
+            <div class="vis-filter-group" data-filter="time">
+              <span class="vis-filter-label">Time:</span>
+              <button class="pill active" data-value="today">Today</button>
+              <button class="pill" data-value="week">Week</button>
+              <button class="pill" data-value="month">Month</button>
+              <button class="pill" data-value="all">All</button>
+            </div>
+
+            <div class="vis-filter-group vis-filter-right">
+              <label class="vis-checkbox">
+                <input type="checkbox" id="relatedOnlyCheckbox">
+                <span>Related tags only</span>
+              </label>
+              <button class="btn" id="applyFiltersBtn">Apply</button>
+            </div>
+          </div>
+        </section>
+
+      </section>
+
+      <!-- RIGHT COLUMN -->
+      <aside class="visual-right">
+
+        <div class="vis-results-header">
+          <span id="resultsCount">Results (3)</span>
+          <select id="sortSelect">
+            <option value="newest">Newest</option>
+            <option value="likes">Most liked</option>
+            <option value="views">Most viewed</option>
+          </select>
+        </div>
+
+        <!-- Add data attributes so JS can filter -->
+        <article
+          class="vis-note-card"
+          data-visibility="public"
+          data-time="today"
+          data-tags="UX,Research,Wireframe"
+        >
+          <div class="vis-note-tags">
+            <span class="vis-note-tag">#UX</span>
+            <span class="vis-note-tag">#Research</span>
+            <span class="vis-note-tag">#Wireframe</span>
+          </div>
+          <h3>UX Research Methods for Modern Web Apps</h3>
+          <p class="vis-note-body">
+            Exploring interviews, surveys, and usability testing to inform design decisions.
+          </p>
+          <div class="vis-note-footer">
+            <div class="vis-note-author">
+              <div class="avatar">SC</div>
+              <div class="vis-note-meta">
+                <span class="vis-note-name">Sarah Chen</span>
+                <span class="vis-note-time">2 hours ago</span>
+              </div>
+            </div>
+            <div class="vis-note-stats">
+              <span data-likes="42">♡ 42</span>
+              <span data-comments="8">💬 8</span>
+              <span data-views="15">👁 15</span>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="vis-note-card"
+          data-visibility="public"
+          data-time="today"
+          data-tags="Chem,Lecture,Exam,Notes"
+        >
+          <div class="vis-note-tags">
+            <span class="vis-note-tag">#Chem</span>
+            <span class="vis-note-tag">#Lecture</span>
+            <span class="vis-note-tag">#Exam</span>
+            <span class="vis-note-tag">#Notes</span>
+          </div>
+          <h3>Understanding Chemical Bonds in Organic Chemistry</h3>
+          <p class="vis-note-body">
+            Detailed notes on covalent and ionic bonds and how they shape molecules.
+          </p>
+          <div class="vis-note-footer">
+            <div class="vis-note-author">
+              <div class="avatar">AK</div>
+              <div class="vis-note-meta">
+                <span class="vis-note-name">Alex Kim</span>
+                <span class="vis-note-time">5 hours ago</span>
+              </div>
+            </div>
+            <div class="vis-note-stats">
+              <span data-likes="28">♡ 28</span>
+              <span data-comments="5">💬 5</span>
+              <span data-views="12">👁 12</span>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="vis-note-card"
+          data-visibility="public"
+          data-time="week"
+          data-tags="Project,Risk,Todo"
+        >
+          <div class="vis-note-tags">
+            <span class="vis-note-tag">#Project</span>
+            <span class="vis-note-tag">#Risk</span>
+            <span class="vis-note-tag">#Todo</span>
+          </div>
+          <h3>Project Risk Management Framework</h3>
+          <p class="vis-note-body">
+            A guide to identifying, assessing, and mitigating risks in software development.
+          </p>
+          <div class="vis-note-footer">
+            <div class="vis-note-author">
+              <div class="avatar">JL</div>
+              <div class="vis-note-meta">
+                <span class="vis-note-name">Jordan Lee</span>
+                <span class="vis-note-time">1 day ago</span>
+              </div>
+            </div>
+            <div class="vis-note-stats">
+              <span data-likes="35">♡ 35</span>
+              <span data-comments="10">💬 10</span>
+              <span data-views="22">👁 22</span>
+            </div>
+          </div>
+        </article>
+
+      </aside>
+
+    </div>
+
+    <div class="spacer"></div>
+  </main>
+
+</body>
+</html>

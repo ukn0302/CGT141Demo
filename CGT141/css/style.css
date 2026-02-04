@@ -1,0 +1,107 @@
+:root{
+    --accent-color: rgb(245,216,119);
+    --base-color: rgb(255,249,230);
+    --text-color: black;
+    --input-color: rgb(239, 202, 82);
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,200;1,14..32,200&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-family: "Inter", sans-serif;
+    font-size: 12pt;
+    color: var(--text-color);
+    text-align: center;
+}
+
+#signupbody{
+    background-color: var(--base-color);
+}
+body{
+    background-color: var(--base-color);
+}
+
+.wrapper{
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+}
+
+
+#form{
+    width: min(400px, 100%);
+    margin-top: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
+#form > div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#form label{
+    flex-shrink: 0;
+    height: 50px;
+    width: 50px;
+    background-color: var(--accent-color);
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#form input:not([type="checkbox"]) {
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 1em;
+    font: inherit;
+    border-radius: 0 10px 10px 0;  
+    border: none;
+}
+
+#form input:hover{
+    border: 2px solid var(--input-color);
+}
+#form input:focus{
+    outline:none;
+}
+#form button{
+    margin-top: 10px;
+    border: none;
+    border-radius: 1000px;
+    padding: 10px 200px;
+    background-color: var(--accent-color);
+}
+
+.checks{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.checks > div {
+    display: flex;          /* put checkbox and text in a row */
+    align-items: center;    /* vertically center them */
+    gap: 5px;               /* optional: space between checkbox and text */
+}
+
+.checks input[type="checkbox"] {
+    flex-shrink: 0;         /* prevent checkbox from shrinking */
+}
+
+.checks p {
+    margin: 0;              /* remove default margin so it's aligned nicely */
+}
+
+h1 {
+    padding-top: 50px; 
+}

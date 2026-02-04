@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/master.css"> 
+    <link rel="stylesheet" href="css/mediaqueries.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/chart.js" defer></script>
+    <script src="js/chart2.js" defer></script>
+    <script src="js/avatar.js"></script>
+    <title>Landing Page</title>
+</head>
+<body>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="js/chart.js" defer></script>
+    <script src="js/game.js" defer></script>
+
+    <div id="page-container">
+        <nav id="desktop-nav">
+            <div class="logo"><a href="index.html" id="logo">MindBloom</a></div>
+            <ul class="nav-links">
+                <li><a href="storage.html">Idea Storage</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="login.html">Log In</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+        <nav id="hamburger-nav">
+            <div class="logo"><a href="index.html" id="logo">MindBloom</a></div>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu-links">
+                    <li><a href="storage.html" onclick="toggleMenu()">Idea Storage</a></li>
+                    <li><a href="forum.html" onclick="toggleMenu()">Forum</a></li>
+                    <li><a href="login.html" onclick="toggleMenu()">Log In</a></li>
+                    <li><a href="signup.html" onclick="toggleMenu()">Sign Up</a></li>
+                </div>
+            </div>
+        </nav>
+        <div id="landingpage">
+            <section id="hook">
+                <div id="app" class="game-wrap footnote2">
+                    <!-- START SCREEN -->
+                    <div id="start-screen" class="screen active">
+                      <div class="intro">
+                        <header class="intro-top">
+                          <h1 class="brandline">✨ MindBloom ✨</h1>
+                          <h2 class="tagline">The Sky of Lost Ideas</h2>
+                        </header>
+                        <main class="intro-mid">
+                          <div class="instruction">Click to catch the stars before they fade...</div>
+                        </main>
+                        <footer class="intro-bottom">
+                          <button id="start-btn" class="primary">Start Game</button>
+                        </footer>
+                      </div>
+                    </div>
+                
+                    <!-- GAME SCREEN -->
+                    <div id="game-screen" class="screen">
+                      <div class="top-bar">
+                        <div>Star: <span id="current-star">0</span>/10</div>
+                        <div>Caught: <span id="caught-count">0</span></div>
+                        <div>Missed: <span id="missed-count">0</span></div>
+                      </div>
+                      <div id="game-area"></div>
+                    </div>
+                
+                    <!-- RESULT SCREEN -->
+                    <div id="result-screen" class="screen center">
+                      <div class="result-card">
+                        <div class="brand">
+                          <span class="logo">✨</span>
+                          <span class="brand-name">MindBloom</span>
+                          <span class="logo">✨</span>
+                          <div class="tagline">The Sky of Lost Ideas</div>
+                        </div>
+                
+                        <div class="result-body">
+                          <p class="lead anim anim-group1">You lost <span id="lost-count">0</span> stars</p>
+                          <p class="lead anim anim-group1">Every idea faded away...</p>
+                
+                          <hr class="divider">
+                
+                          <p class="mid anim anim-group2">You have <span class="hl">6,200</span> thoughts every day</p>
+                          <p class="mid anim anim-group2">How many do you remember without saving?</p>
+                          <p class="mid anim anim-group2">Explore <span class="hl">MindBloom</span> features that will make saving ideas easier.</p>
+                
+                          <div id="scroll-explore" class="scroll-wrap" role="button" tabindex="0" aria-label="Scroll to explore" data-target="#details">
+                            <span class="scroll-copy">Scroll to explore</span>
+                            <div class="chev"> ⌄</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </section>
+            <section id="feature1">
+                <div id="feature1_Demo">
+                    <h2>Customizing</h2>
+                    <h3>Title</h3>
+                    <input type="text" id="feature1_Demo_Title_input" name="feature1_Demo_Title_input" placeholder="Enter your idea title here">
+                    <h3>Tags + Color</h3>
+                    <div id="demo_tags">
+                        <input type="text" id="feature1_Demo_Tags_input" name="feature1_Demo_Tags_input" placeholder="Add tag here">
+                        <div class="color_picker">
+                            <label for="myColor"></label>
+                            <input type="color" id="myColor" name="myColor" value="#d4c5f9">
+                        </div>
+                        <button class="add_button">Add</button>
+                    </div>
+                    <h3>Content</h3>
+                    <input type="text" id="feature1_Demo_Content_input" name="feature1_Demo_Content_input" placeholder="Write your idea here">
+                    <div id="pub_pri">
+                        <button>Private</button>
+                        <button>Public</button>
+                    </div>
+                </div>
+                <div id="feature1_Demo_Phone">
+                    <h2>Customizing</h2>
+                    <h3>Title</h3>
+                    <input type="text" id="feature1_Demo_Title_input" name="feature1_Demo_Title_input" placeholder="Enter your idea title here">
+                    <h3>Tags + Color</h3>
+                    <div id="demo_tags">
+                        <input type="text" id="feature1_Demo_Tags_input" name="feature1_Demo_Tags_input" placeholder="Add tag here">
+                        <div class="color_picker">
+                            <label for="myColor"></label>
+                            <input type="color" id="myColor" name="myColor" value="#d4c5f9">
+                        </div>
+                        <button class="add_button">Add</button>
+                    </div>
+                    <h3>Content</h3>
+                    <input type="text" id="feature1_Demo_Content_input" name="feature1_Demo_Content_input" placeholder="Write your idea here">
+                    <div id="pub_pri">
+                        <button id="pri">Private</button>
+                        <button id="pub">Public</button>
+                    </div>
+                </div>
+                <div class="landingpage_info">
+                    <h1>Take Quick Notes</h1>
+                    <h2>Capture your ideas instantly with our intuitive note-taking interface. Organize thoughts by category, add descriptions, and never lose a brilliant idea again.</h2>
+                    <hr>
+                </div>        
+            </section>
+            <section id="feature2">
+                <div id="feature2_Demo">
+                    <div class="tags">
+                        <h2>Tags:</h2>
+                        <button class="environment_tags">Environment</button>
+                        <button class="fsb_tags">F&B</button>
+                        <button class="technology_tags">Technology</button>
+                        <button class="notchoose_tags">Animal</button>
+                        <button class="notchoose_tags">Oceanic</button>
+                    </div>
+                    <hr>
+                    <svg id="network" width="550" height="380"></svg>
+                    <div class="resize">
+                        <input type="image" class="sort1" src="image/sort.svg" alt="Sort" width="20" height="20">
+                    </div>
+                </div>
+                <div id="feature2_Demo_Phone">
+                    <div class="tags">
+                        <h2>Tags:</h2>
+                        <button class="environment_tags">Environment</button>
+                        <button class="fsb_tags">F&B</button>
+                        <button class="technology_tags">Technology</button>
+                        <button class="notchoose_tags">Animal</button>
+                        <button class="notchoose_tags">Oceanic</button>
+                    </div>
+                    <hr>
+                    <svg id="network2" width="550" height="380"></svg>
+                    <div class="resize">
+                        <input type="image" class="sort1" src="image/sort.svg" alt="Sort" width="20" height="20">
+                    </div>
+                </div>
+                <div class="landingpage_info1">
+                    <h1>Visualize Your Notes</h1>
+                    <h2>See connections between your ideas with our interactive visualize tool. Discover patterns, relationships, and new insights in your creative journey.</h2>
+                    <hr>
+                </div>
+                <div class="landingpage_info1a">
+                    <h1>Visualize Your Notes</h1>
+                    <h2>See connections between your ideas with our interactive visualize tool. Discover patterns, relationships, and new insights in your creative journey.</h2>
+                    <hr>
+                </div>
+            </section>
+            <section id="feature3">
+                <div id="feature3_Demo">
+                    <div id="nav_forum_demo">
+                        <h3>Community Forum</h3>
+                        <h4>Share ideas and connect with others</h4>
+                        <hr>
+                    </div>
+                    <div id="note_container">
+                        <div class="notes" id="notes1">
+                            <div class="notes_content">
+                                <h4>A Bell Dog</h4>
+                                <h5>A Dog wearing a lots of Bells for Christmas</h5>
+                            </div>
+                            <div class="tags">
+                                <button class="event_tags">event</button>
+                                <button class="marketing_tags">marketing</button>
+                            </div>
+                            <hr class="hr_note">
+                            <div class="notes_user">
+                                <div class="user-profile-image"></div>
+                                <div class="account_info">
+                                    <div class="user_name">
+                                        <h6>Cyline</h6>
+                                    </div>
+                                    <div class="user_timepost">
+                                        <h6>2h ago</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notes" id="notes2">
+                            <div class="notes_content">
+                                <h4>A Ghost Christmas Tree</h4>
+                                <h5>Christmas Tree wearing ghost costome</h5>
+                            </div>
+                            <div class="tags">
+                                <button class="halloween_tags">halloween</button>
+                                <button class="marketing_tags">marketing</button>
+                            </div>
+                            <hr class="hr_note">
+                            <div class="notes_user">
+                                <div class="user-profile-image"></div>
+                                <div class="account_info">
+                                    <div class="user_name">
+                                        <h6>Amielle</h6>
+                                    </div>
+                                    <div class="user_timepost">
+                                        <h6>6h ago</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notes"id="notes3">
+                            <div class="notes_content">
+                                <h4>Chat Watermelon</h4>
+                                <h5>Comment favorite watermelon</h5>
+                            </div>
+                            <div class="tags">
+                                <button class="idea_tags">idea</button>
+                                <button class="daily_tags">daily</button>
+                            </div>
+                            <hr class="hr_note">
+                            <div class="notes_user">
+                                <div class="user-profile-image"></div>
+                                <div class="account_info">
+                                    <div class="user_name">
+                                        <h6>Pomelo</h6>
+                                    </div>
+                                    <div class="user_timepost">
+                                        <h6>9h ago</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notes" id="notes4">
+                            <div class="notes_content">
+                                <h4>Prickly Snail</h4>
+                                <h5>Snail cook with pickle</h5>
+                            </div>
+                            <div class="tags">
+                                <button class="food_tags">food</button>
+                                <button class="training_tags">training</button>
+                            </div>
+                            <hr class="hr_note">
+                            <div class="notes_user">
+                                <div class="user-profile-image"></div>
+                                <div class="account_info">
+                                    <div class="user_name">
+                                        <h6>Mydei</h6>
+                                    </div>
+                                    <div class="user_timepost">
+                                        <h6>12h ago</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="feature3_Demo_Phone">
+                    <div id="nav_forum_demo">
+                        <h3>Community Forum</h3>
+                        <h4>Share ideas and connect with others</h4>
+                        <hr>
+                    </div>
+                    <div id="note_container">
+                        <div class="notes" id="notes1">
+                            <div class="notes_content">
+                                <h4>A Bell Dog</h4>
+                                <h5>A Dog wearing a lots of Bells for Christmas</h5>
+                            </div>
+                            <div class="tags">
+                                <button class="event_tags">event</button>
+                                <button class="marketing_tags">marketing</button>
+                            </div>
+                            <hr class="hr_note">
+                            <div class="notes_user">
+                                <div class="user-profile-image"></div>
+                                <div class="account_info">
+                                    <div class="user_name">
+                                        <h6>Cyline</h6>
+                                    </div>
+                                    <div class="user_timepost">
+                                        <h6>2h ago</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notes" id="notes2">
+                            <div class="notes_content">
+                                <h4>A Ghost Christmas Tree</h4>
+                                <h5>Christmas Tree wearing ghost costome</h5>
+                            </div>
+                            <div class="tags">
+                                <button class="halloween_tags">halloween</button>
+                                <button class="marketing_tags">marketing</button>
+                            </div>
+                            <hr class="hr_note">
+                            <div class="notes_user">
+                                <div class="user-profile-image"></div>
+                                <div class="account_info">
+                                    <div class="user_name">
+                                        <h6>Amielle</h6>
+                                    </div>
+                                    <div class="user_timepost">
+                                        <h6>6h ago</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notes"id="notes3">
+                            <div class="notes_content">
+                                <h4>Chat Watermelon</h4>
+                                <h5>Comment favorite watermelon</h5>
+                            </div>
+                            <div class="tags">
+                                <button class="idea_tags">idea</button>
+                                <button class="daily_tags">daily</button>
+                            </div>
+                            <hr class="hr_note">
+                            <div class="notes_user">
+                                <div class="user-profile-image"></div>
+                                <div class="account_info">
+                                    <div class="user_name">
+                                        <h6>Pomelo</h6>
+                                    </div>
+                                    <div class="user_timepost">
+                                        <h6>9h ago</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notes" id="notes4">
+                            <div class="notes_content">
+                                <h4>Prickly Snail</h4>
+                                <h5>Snail cook with pickle</h5>
+                            </div>
+                            <div class="tags">
+                                <button class="food_tags">food</button>
+                                <button class="training_tags">training</button>
+                            </div>
+                            <hr class="hr_note">
+                            <div class="notes_user">
+                                <div class="user-profile-image"></div>
+                                <div class="account_info">
+                                    <div class="user_name">
+                                        <h6>Mydei</h6>
+                                    </div>
+                                    <div class="user_timepost">
+                                        <h6>12h ago</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="landingpage_info">
+                    <h1>Community Forums</h1>
+                    <h2>Engage in thoughtful discussions, share your success stories, and learn from other creators. Our forums are the perfect place to grow your skills and connect with like-minded individuals.</h2>
+                    <hr>
+                </div>
+            </section>
+            <section class="footnote">
+                <h1>Ready to Start?</h1>
+                <h3>Join thousands of creators who are already using our platform to bring their ideas to life. Sign up today and start your creative journey!</h3>
+                <button><a href="signup.html">Started Now</a></button>
+            </section>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+
+  

@@ -1,0 +1,22 @@
+/*Avatar*/ 
+
+.user-profile-image {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #4b6cb7;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: "Inter", sans-serif;
+}
+
+.notes_user {
+    display: flex; 
+    margin-left: 20px;
+    padding-top: 5px;  
+
+}

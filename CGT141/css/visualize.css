@@ -1,0 +1,334 @@
+body {
+    font-family: "Inter", sans-serif;
+}
+
+
+/*  Main Layout  */
+.page{
+    padding-top: calc(var(--topnav-h) + 24px);
+    padding-left: calc(var(--sidebar-w) + 32px);
+    padding-right: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  /*  Panels  */
+  .panel{
+    background: var(--panel);
+    border:1px solid var(--stroke);
+    border-radius: var(--radius);
+    padding:24px;
+    margin-bottom:24px;
+  }
+  .panel h2{ margin:0 0 16px 0; font-size:16px; }
+  
+  /* Shared buttons / avatar  */
+  .btn{
+    border:1px solid var(--stroke); background:#fff;
+    padding:10px 16px; border-radius:10px; font-weight:600; cursor:pointer;
+  }
+  
+  .pill{
+    border:1px solid var(--stroke); background:#fff;
+    padding:8px 14px; border-radius:12px; font-weight:500; cursor:pointer;
+    font-size:13px;
+  }
+  .pill.active{ background:#FFF7DC; border-color:#E9CC61; }
+  
+  .avatar{
+    width:36px; height:36px; border-radius:50%;
+    display:grid; place-items:center; font-weight:700; color:#111; background:#F2DA89;
+  }
+  
+  /* bottom breathing room */
+  .spacer{ height:60px; }
+  
+  
+  
+  /* main 2-column layout */
+  .visualize-page .visualize-layout{
+    display:grid;
+    grid-template-columns:minmax(0,2.1fr) minmax(320px,1.3fr);
+    gap:20px;
+  }
+  
+  /* left column */
+  .visualize-page .visual-left{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  
+  /* tag search */
+  .visualize-page .vis-tag-search input{
+    width:100%;
+    border:1px solid var(--stroke);
+    border-radius:999px;
+    padding:10px 16px;
+    font-size:14px;
+    background:#fff;
+  }
+  
+  /* tag pills */
+  .visualize-page .vis-tag-select{
+    padding-top:18px;
+  }
+  .visualize-page .vis-tag-select h2{
+    margin:0 0 8px;
+    font-size:14px;
+  }
+  .visualize-page .vis-tag-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .visualize-page .pill-tag{
+    border:none;
+    border-radius:999px;
+    padding:6px 12px;
+    font-size:13px;
+    background:#f3f4ff;
+    color:#111;
+    cursor:pointer;
+  }
+  .visualize-page .pill-tag.active{
+    background:#F2DA89;
+  }
+  
+  /* sky panel */
+  .visualize-page .vis-sky-panel{
+    padding:0;
+  }
+  
+  .visualize-page .vis-sky-container{
+    position:relative;
+    border-radius:24px;
+    overflow:hidden;
+    height:320px;
+    background:radial-gradient(circle at top,#1b2946 0%,#050814 55%);
+    box-shadow:0 18px 40px rgba(23,15,73,.08);
+  }
+  
+  /* subtle space stars */
+  .visualize-page .vis-sky-container::before{
+    content:"";
+    position:absolute;
+    inset:-40px;
+    background-image:
+      radial-gradient(1px 1px at 10% 20%, #fff3 0, transparent 60%),
+      radial-gradient(1px 1px at 80% 30%, #fff3 0, transparent 60%),
+      radial-gradient(1px 1px at 20% 80%, #fff3 0, transparent 60%),
+      radial-gradient(1px 1px at 70% 60%, #fff3 0, transparent 60%);
+    opacity:.6;
+    pointer-events:none;
+  }
+  
+  /* lines canvas */
+  .visualize-page #skyLines{
+    position:absolute;
+    inset:0;
+    background: rgb(26,26,46) url("../image/manystar.png") repeat top center;
+    z-index: 0; 
+  }
+  
+  /* star layer */
+  .visualize-page .vis-sky-stars{
+    position:relative;
+    width:100%;
+    height:100%;
+  }
+  
+  /* hint text */
+  .visualize-page .vis-sky-hint{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#f8f6ff;
+    font-size:14px;
+    pointer-events:none;
+  }
+  .visualize-page .vis-hint-icon{
+    font-size:24px;
+    margin-bottom:8px;
+  }
+  .visualize-page .vis-hint-sub{
+    font-size:12px;
+    opacity:.8;
+  }
+  
+  /* zoom controls INSIDE container */
+  .visualize-page .vis-sky-controls{
+    position:absolute;
+    left:16px;
+    top:18px;
+    z-index:3;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .visualize-page .vis-sky-btn{
+    width:34px;
+    height:34px;
+    border-radius:12px;
+    border:none;
+    background:rgba(3,7,18,.8);
+    color:#fefcf5;
+    font-size:18px;
+    cursor:pointer;
+  }
+  
+  /* star nodes (draggable) */
+  .visualize-page .star-node{
+    position:absolute;
+    min-width:80px;
+    padding:6px 10px;
+    border-radius:12px;
+    color:#fff9e4;
+    font-size:12px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    cursor:grab;
+    user-select:none;
+  }
+
+ 
+  .visualize-page .star-node::before{
+    content:"✶";
+    color:#ffd159;
+    font-size:16px;
+  }
+  
+  /* fullscreen sky */
+  .visualize-page .vis-sky-container.fullscreen{
+    height:420px;
+  }
+  
+  /* filters */
+  .visualize-page .vis-filters{
+    margin-top:8px;
+  }
+  .visualize-page .vis-filter-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+    align-items:center;
+  }
+  .visualize-page .vis-filter-group{
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .visualize-page .vis-filter-right{
+    margin-left:auto;
+  }
+  .visualize-page .vis-filter-label{
+    font-size:13px;
+    color:var(--muted);
+  }
+  .visualize-page .vis-checkbox{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:13px;
+    color:var(--muted);
+  }
+  
+  /* right column */
+  .visualize-page .visual-right{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .visual-right {
+    margin-left: 30px; 
+  }
+  
+  /* results header */
+  .visualize-page .vis-results-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:13px;
+    color:var(--muted);
+  }
+  .visualize-page .vis-results-header select{
+    border-radius:999px;
+    border:1px solid var(--stroke);
+    padding:4px 10px;
+    font-size:13px;
+    background:#fff;
+  }
+  
+  /* cards */
+  .visualize-page .vis-note-card{
+    background:#fff;
+    border:1px solid var(--stroke);
+    border-radius:18px;
+    padding:16px 16px 14px;
+    box-shadow:0 10px 26px rgba(23,15,73,.04);
+  }
+  .visualize-page .vis-note-card h3{
+    margin:6px 0 6px;
+    font-size:15px;
+  }
+  .visualize-page .vis-note-body{
+    margin:0 0 10px;
+    font-size:13px;
+    color:var(--muted);
+  }
+  .visualize-page .vis-note-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+  }
+  .visualize-page .vis-note-tag{
+    font-size:11px;
+    padding:4px 8px;
+    border-radius:999px;
+    background:#FFF7DC;
+    border:1px solid rgba(0,0,0,.06);
+  }
+  .visualize-page .vis-note-footer{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .visualize-page .vis-note-author{
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .visualize-page .vis-note-meta{
+    display:flex;
+    flex-direction:column;
+    font-size:11px;
+  }
+  .visualize-page .vis-note-name{
+    font-weight:600;
+  }
+  .visualize-page .vis-note-time{
+    color:var(--muted);
+  }
+  .visualize-page .vis-note-stats{
+    display:flex;
+    gap:10px;
+    font-size:11px;
+    color:var(--muted);
+  }
+  
+  /* responsive */
+  @media (max-width: 1024px){
+    .visualize-page .visualize-layout{
+      grid-template-columns:1fr;
+    }
+    .visualize-page .vis-filter-right{
+      margin-left:0;
+    }
+  }
+  
