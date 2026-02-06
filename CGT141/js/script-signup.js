@@ -20,7 +20,7 @@ form.addEventListener('submit', (e) => {
    if (errors.length > 0){
     e.preventDefault()
     error_message.innerText = errors.join(". ")
-    window.location.href = "view.html"; // <-- add it here
+    window.location.href = "storage.html"; // <-- add it here
    }
 
 })

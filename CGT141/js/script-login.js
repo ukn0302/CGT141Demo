@@ -21,9 +21,8 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     error_message.innerText  = errors.join(". ");
   } else {
-    // No errors → redirect to view.html
     e.preventDefault(); // prevent actual form submission
-    window.location.href = "view.html"; // <-- add it here
+    window.location.href = "storage.html"; // <-- add it here
   }
 });
 
