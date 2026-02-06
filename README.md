@@ -1,2 +1,2 @@
-# CGT141Demo
-Demo for CGT 141 Lab 3
+# CGT141
+Final Project - MindBloom
